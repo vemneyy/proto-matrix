@@ -35,3 +35,21 @@ For each domain in `domains.txt`, the script:
 ## Quick start
 
 1. Put your domains (one per line) into `domains.txt`:
+example.com
+google.com
+cloudflare.com
+
+2. Make the script executable and run it:
+```bash
+chmod +x ./proto-matrix.sh
+./proto-matrix.sh
+```
+
+You’ll get a table like:
+```
+Domain                                             TLSv1.2  TLSv1.3  |  HTTP1.1  HTTP2    QUIC     |  Time(ms)  HSTS    |  Status
+----------------------------------------           -------  -------  |  -------  -------  -------  |  --------  ------- |  ------
+https://example.com                                Y        N        |  Y        N        N        |  120       N       |  OK
+https://google.com                                 Y        Y        |  Y        Y        Y        |  88        Y       |  OK
+...
+```
